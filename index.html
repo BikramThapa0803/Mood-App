@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="uppersidebar">
+                <div class="logo">
+                    <img src="" alt="logo">
+                </div>
+                <nav>
+                    <ul>
+                        <li>Dashboard</li>
+                        <li>Journal</li>
+                        <li>Calendar</li>
+                        <li>Analytics</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="lowersidebar">
+                <div class="profile">
+                    <img src="" alt="profile">
+                    <h2>Profile</h2>
+                    <div class="setting">
+                        Settings
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main class="content">
+            <div class="moodselect card">
+                <h1>Select Your mood</h1>
+                <!-- <label for="select Mood">Select Mood: </label>
+                <select name="mood" id="mood">
+                    <option value="😊">Happy</option>
+                    <option value="😢">Sad</option>
+                    <option value="😠">Angry</option>
+                    <option value="😍">Love</option>
+                </select> -->
+                <div class="selectmood">
+                    <button class="moodbtn selected">😊</button>
+                    <button class="moodbtn ">😢</button>
+                    <button class="moodbtn ">😠</button>
+                    <button class="moodbtn ">😍</button>
+                </div>
+                <br><br>
+                <label for="Write Your Mood">Write Your Mood: </label>
+                <br><br>
+                <textarea id="note" rows="4" cols="30"></textarea><br><br>
+
+                <button id="addentry">Add Entry</button>
+            </div>
+
+
+            <div class="moodcalendar card">
+                Calendar
+            </div>
+
+            <div class="journal-entry card">
+                <h2>Journal Entries:</h2>
+                <ul id="entrylist"></ul>
+            </div>
+
+            <div class="moodchart card">
+                moodchart
+            </div>
+            <!-- <button id="clearall"> Clear All</button>
+            <button id="happy"> SHow 😊</button>
+            <button id="sad"> Show 😢</button>
+            <button id="angry"> Show 😠</button>
+            <button id="love"> Show 😍</button>
+            <button id="showall"> Show All</button> -->
+            <br><br>
+
+
+        </main>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

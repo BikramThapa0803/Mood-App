@@ -1,0 +1,119 @@
+ #entryList {
+     list-style-type: none;
+     padding-left: 0;
+     margin: 0;
+ }
+
+ #entryList li {
+     list-style-type: none;
+ }
+
+ #entryList li::marker {
+     content: "";
+ }
+
+ .entry-item {
+     list-style-type: none;
+ }
+
+ :root {
+     --Happy: #FFD166;
+     --sad: #118AB2;
+     --Angry: #EF476F;
+     --Love: #FF7C93;
+     --Neutral-Background: #F9F9F9;
+     --Card-Background: #FFFFFF;
+     --Accent-Text-Color: #333333;
+ }
+
+ body {
+     margin: 0;
+     padding: 30px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: hsla(311, 74%, 87%, 1);
+
+     background: linear-gradient(90deg, hsla(311, 74%, 87%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
+
+     background: -moz-linear-gradient(90deg, hsla(311, 74%, 87%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
+
+     background: -webkit-linear-gradient(90deg, hsla(311, 74%, 87%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
+
+     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F6C4ED", endColorstr="#E1DAE6", GradientType=1);
+ }
+
+ .wrapper {
+     display: flex;
+     width: 95%;
+     height: 91.5vh;
+     background-color: var(--Neutral-Background);
+     overflow: hidden;
+     /* padding: 30px; */
+     column-gap: 20px;
+     border-radius: 15px;
+     /* border: 1px solid black; */
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     /* margin-top: 35px; */
+ }
+
+ .sidebar {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding: 20px;
+     width: 20%;
+     border: 1px solid black;
+ }
+
+ .content {
+     border: 1px solid gray;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     /* 2 columns */
+     grid-template-rows: repeat(2, 1fr);
+     /* 2 rows */
+     gap: 10px;
+     /* height: 400px; /* total height     
+  width: 400px;  total width */
+     width: 100%;
+     height: 100%;
+     padding: 20px;
+ }
+
+ .card {
+     display: flex;
+     flex-direction: column;
+     border: 1px solid red;
+     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+     padding: 20px;
+     border-radius: 15px;
+ }
+
+ .selectmood {
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-items: start;
+     column-gap: 60px;
+     
+ }
+
+ .moodbtn {
+     border-radius: 50%;
+     background-color: #cbcbcb;
+     padding: 10px;
+     border: 0;
+     font-size: large;
+ }
+
+ .moodbtn:hover {
+     background-color: rgb(174, 174, 174);
+     cursor: pointer;
+
+ }
+
+ .moodbtn.selected {
+  background: hsla(311, 74%, 87%, 1);
+  color: white;
+}
