@@ -1,119 +1,256 @@
- #entryList {
-     list-style-type: none;
-     padding-left: 0;
-     margin: 0;
- }
+:root {
+    --Happy: #FFD166;
+    --sad: #118AB2;
+    --Angry: #EF476F;
+    --Love: #FF7C93;
+    --Neutral-Background: #F9F9F9;
+    --Card-Background: #FFFFFF;
+    --Accent-Text-Color: #333333;
+}
 
- #entryList li {
-     list-style-type: none;
- }
+#entryList {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
 
- #entryList li::marker {
-     content: "";
- }
+#entryList li {
+    list-style-type: none;
+}
 
- .entry-item {
-     list-style-type: none;
- }
+#entryList li::marker {
+    content: "";
+}
 
- :root {
-     --Happy: #FFD166;
-     --sad: #118AB2;
-     --Angry: #EF476F;
-     --Love: #FF7C93;
-     --Neutral-Background: #F9F9F9;
-     --Card-Background: #FFFFFF;
-     --Accent-Text-Color: #333333;
- }
+.entry-item {
+    list-style-type: none;
+}
 
- body {
-     margin: 0;
-     padding: 30px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     background: hsla(311, 74%, 87%, 1);
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: hsla(311, 74%, 87%, 1);
 
-     background: linear-gradient(90deg, hsla(311, 74%, 87%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
+    background: linear-gradient(90deg, hsla(311, 74%, 87%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
 
-     background: -moz-linear-gradient(90deg, hsla(311, 74%, 87%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(311, 74%, 87%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
 
-     background: -webkit-linear-gradient(90deg, hsla(311, 74%, 87%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(311, 74%, 87%, 1) 0%, hsla(275, 19%, 88%, 1) 100%);
 
-     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F6C4ED", endColorstr="#E1DAE6", GradientType=1);
- }
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F6C4ED", endColorstr="#E1DAE6", GradientType=1);
+}
 
- .wrapper {
-     display: flex;
-     width: 95%;
-     height: 91.5vh;
-     background-color: var(--Neutral-Background);
-     overflow: hidden;
-     /* padding: 30px; */
-     column-gap: 20px;
-     border-radius: 15px;
-     /* border: 1px solid black; */
-     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-     /* margin-top: 35px; */
- }
+.outer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+}
 
- .sidebar {
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     padding: 20px;
-     width: 20%;
-     border: 1px solid black;
- }
+.app-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
 
- .content {
-     border: 1px solid gray;
-     display: grid;
-     grid-template-columns: repeat(2, 1fr);
-     /* 2 columns */
-     grid-template-rows: repeat(2, 1fr);
-     /* 2 rows */
-     gap: 10px;
-     /* height: 400px; /* total height     
-  width: 400px;  total width */
-     width: 100%;
-     height: 100%;
-     padding: 20px;
- }
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    width: 15%;
 
- .card {
-     display: flex;
-     flex-direction: column;
-     border: 1px solid red;
-     box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-     padding: 20px;
-     border-radius: 15px;
- }
+}
 
- .selectmood {
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-start;
-     align-items: start;
-     column-gap: 60px;
-     
- }
+/* Main content area */
+.main-content {
+    width: 85%;
+    padding: 2rem;
+    overflow-y: auto;
+    background: linear-gradient(to bottom right, #f9f9ff, #fce4ec);
+}
 
- .moodbtn {
-     border-radius: 50%;
-     background-color: #cbcbcb;
-     padding: 10px;
-     border: 0;
-     font-size: large;
- }
+.grid-container {
 
- .moodbtn:hover {
-     background-color: rgb(174, 174, 174);
-     cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns */
+    grid-gap: 2rem;
+    height: 100%;
 
- }
+}
 
- .moodbtn.selected {
-  background: hsla(311, 74%, 87%, 1);
-  color: white;
+.card {
+    background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.selectmood {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: start;
+    column-gap: 60px;
+
+}
+
+.moodbtn {
+    border-radius: 50%;
+    background-color: #cbcbcb;
+    padding: 10px;
+    border: 0;
+    font-size: large;
+    transition: 0.3s;
+}
+
+.moodbtn:hover {
+    background-color: rgb(174, 174, 174);
+    cursor: pointer;
+
+}
+
+.selected {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mood specific selected styles */
+
+.selected.happy {
+    background-color: var(--Happy);
+}
+
+.selected.sad {
+    background-color: var(--sad);
+}
+
+.selected.angry {
+    background-color: var(--Angry);
+}
+
+.selected.love {
+    background-color: var(--Love);
+}
+
+/* First card */
+
+.moodselect {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 15px;
+}
+
+.moodselect h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.moodselect label {
+    color: #B4886B;
+    font-weight: bold;
+    display: block;
+    width: 150px;
+    float: left;
+}
+
+
+.moodselect button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.moodselect button.entry {
+    font-weight: 600;
+    color: #382b22;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: #fff0f0;
+    border: 2px solid #b18597;
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.moodselect button.entry::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f9c4d2;
+    border-radius: inherit;
+    -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+    box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.moodselect button.entry:hover {
+    background: #ffe9e9;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+}
+
+.moodselect button.entry:hover::before {
+    -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+    box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+}
+
+.moodselect button.entry:active {
+    background: #ffe9e9;
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+}
+
+.moodselect button.entry:active::before {
+    -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+    box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+
+.moodselect textarea {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.moodselect textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
 }
